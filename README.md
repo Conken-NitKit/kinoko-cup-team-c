@@ -1,2 +1,3 @@
 # kinoko-cup-team-c
-書きこみ出来てる？
+UnityVer：2021.1.22f1
+画面比率：9:16Aspect
