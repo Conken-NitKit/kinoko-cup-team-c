@@ -1,9 +1,9 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 /// <summary>
-/// Title‚©‚çMain‚Ö‚ÌƒV[ƒ“ˆÚs‚ÌƒXƒNƒŠƒvƒg
+/// Titleã‹ã‚‰Mainã¸ã®ã‚·ãƒ¼ãƒ³ç§»è¡Œã®ã‚¹ã‚¯ãƒªãƒ—ãƒˆ
 /// </summary>
 public class ChangeScene : MonoBehaviour
 {
