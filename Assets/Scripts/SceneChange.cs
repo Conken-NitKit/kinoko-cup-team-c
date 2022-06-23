@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 public class SceneChange : MonoBehaviour
 {
 
-    public void ButtonClicked()
+    void ButtonClicked()
     {
             SceneManager.LoadScene("Main");
     }
