@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
 /// <summary>
 /// TitleからMainへのシーン移行のスクリプト
 /// </summary>
-public class ChangeScene : MonoBehaviour
+public class SceneChange : MonoBehaviour
 {
 
     public void ButtonClicked()
