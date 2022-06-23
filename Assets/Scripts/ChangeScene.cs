@@ -8,11 +8,8 @@ using UnityEngine.SceneManagement;
 public class ChangeScene : MonoBehaviour
 {
 
-    void FixedUpdate()
+    public void ButtonClicked()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
             SceneManager.LoadScene("Main");
-        }
     }
 }
