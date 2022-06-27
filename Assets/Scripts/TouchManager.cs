@@ -61,7 +61,7 @@ public class TouchManager : MonoBehaviour
 			if (hitObj.name == currentName && lastBall != hitObj)
 			{
 				float distance = Vector2.Distance(hitObj.transform.position, lastBall.transform.position);
-				if (distance < 1.0f)
+				if (distance < 5.0f)
 				{
 					lastBall = hitObj;
 					PushToList(hitObj);
