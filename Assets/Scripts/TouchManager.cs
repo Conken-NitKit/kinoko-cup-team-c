@@ -1,10 +1,10 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// ƒpƒYƒ‹‚ÉŠÖ‚·‚éƒXƒNƒŠƒvƒg
-/// ¶ƒNƒŠƒbƒN‚µ‚È‚ª‚ç“®‚©‚µ‚½‚Æ‚«‚É‚»‚ÌƒuƒƒbƒN‚ğ”»’è‚µ‚ÄÁ‚µ‚½‚è‚·‚é‚±‚Æ‚ª‚Å‚«‚é
+/// ãƒ‘ã‚ºãƒ«ã«é–¢ã™ã‚‹ã‚¹ã‚¯ãƒªãƒ—ãƒˆ
+/// å·¦ã‚¯ãƒªãƒƒã‚¯ã—ãªãŒã‚‰å‹•ã‹ã—ãŸã¨ãã«ãã®ãƒ–ãƒ­ãƒƒã‚¯ã‚’åˆ¤å®šã—ã¦æ¶ˆã—ãŸã‚Šã™ã‚‹ã“ã¨ãŒã§ãã‚‹
 /// </summary>
 public class TouchManager : MonoBehaviour
 {
@@ -15,11 +15,12 @@ public class TouchManager : MonoBehaviour
 	private GameObject lastBall;
 	private string currentName;
 	private int value;
+	private float plusAngleValue = 60;
+	private float minusAngleValue = -60;
+	private float generateX = 0;
+	private float generateY = 10;
+	private float generateZ = 0;
 	List<GameObject> removableBallList = new List<GameObject>();
-    void Start()
-    {
-        
-    }
 
     void FixedUpdate()
     {
@@ -102,7 +103,7 @@ public class TouchManager : MonoBehaviour
 			yield break;
 		}
 		value = Random.Range(0, blocks.Length);
-		Instantiate(blocks[value], new Vector3(0.0f, 10.0f, 0.0f), Quaternion.Euler(0, 0, Random.Range(-60.0f, 60.0f)));
+		Instantiate(blocks[value], new Vector3(generateX, generateY, generateZ), Quaternion.Euler(0, 0, Random.Range(plusAngleValue, minusAngleValue)));
 		yield return new WaitForSeconds(0.1f);
 		StartCoroutine(DropBall(blockCount));
 	}
