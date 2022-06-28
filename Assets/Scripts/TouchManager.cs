@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// パズルに関するスクリプト
+/// 左クリックしながら動かしたときにそのブロックを判定して消したりすることができる
+/// </summary>
 public class TouchManager : MonoBehaviour
 {
 	[SerializeField]
