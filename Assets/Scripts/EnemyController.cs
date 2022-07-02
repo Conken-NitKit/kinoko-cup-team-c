@@ -53,6 +53,7 @@ public class EnemyController : MonoBehaviour
         {
             attackDamage += basicDamage * (enemyAttackCount + 10);
         }
+        touchManager.SetActive(true);
         yield return null;
     }
 }
