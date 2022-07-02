@@ -27,6 +27,7 @@ public class TouchManager : MonoBehaviour
 	private int warriorCount;
 	private int wizardCount;
 	private int monkCount;
+	private float explosionRange = 5.0f;
 
 
 
@@ -65,7 +66,7 @@ public class TouchManager : MonoBehaviour
 			}
 			else if (ballName.StartsWith("Bomb"))
             {
-				var destroyBall = Physics2D.CircleCastAll(transform.position, 5.0f, Vector3.forward);
+				var destroyBall = Physics2D.CircleCastAll(transform.position, explosionRange, Vector3.forward);
 				int i = 0;
 				foreach(var des in destroyBall)
                 {
