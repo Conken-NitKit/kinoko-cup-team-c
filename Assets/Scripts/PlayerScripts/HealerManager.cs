@@ -7,13 +7,16 @@ using UnityEngine;
 /// </summary>
 public class HealerManager : MonoBehaviour
 {
+    [SerializeField] TouchManager touchManager;
+
     void Start()
     {
         
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        
+        //int healerHeelHP = touchManager.healerCount;
+
     }
 }
