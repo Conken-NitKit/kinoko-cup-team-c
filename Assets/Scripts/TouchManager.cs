@@ -5,6 +5,7 @@ using UnityEngine;
 /// <summary>
 /// パズルに関するスクリプト
 /// 左クリックしながら動かしたときにそのブロックを判定して消したりすることができる
+/// 爆弾を押すと、一定範囲内のブロックと爆弾を消すことができる
 /// </summary>
 public class TouchManager : MonoBehaviour
 {
@@ -27,6 +28,9 @@ public class TouchManager : MonoBehaviour
 	private int warriorCount;
 	private int wizardCount;
 	private int monkCount;
+	private int touchCount = 3;
+
+	[SerializeField]
 	private float explosionRange = 5.0f;
 
 
@@ -35,6 +39,10 @@ public class TouchManager : MonoBehaviour
 
     void FixedUpdate()
     {
+		if(touchCount == 0)
+        {
+			gameObject.SetActive(false);
+        }
 		if (Input.GetMouseButtonDown(0) && firstBall == null)
 		{
 			OnDragStart();
@@ -66,17 +74,32 @@ public class TouchManager : MonoBehaviour
 			}
 			else if (ballName.StartsWith("Bomb"))
             {
-				var destroyBall = Physics2D.CircleCastAll(transform.position, explosionRange, Vector3.forward);
-				int i = 0;
+				var destroyBall = Physics2D.CircleCastAll(Camera.main.ScreenToWorldPoint(Input.mousePosition), explosionRange, Vector3.forward);
 				foreach(var des in destroyBall)
                 {
                     if (des.collider.name.StartsWith("Block") || des.collider.name.StartsWith("Bomb"))
                     {
-						i++;
 						Destroy(des.collider.gameObject);
+						StartCoroutine(DropBall(1));
                     }
-                }
-				StartCoroutine(DropBall(i));
+					if (des.collider.name == "BlockBlave")
+					{
+						blaveCount++;
+					}
+					if (des.collider.name == "BlockWarrior")
+					{
+						warriorCount++;
+					}
+					if (des.collider.name == "BlockWizard")
+					{
+						wizardCount++;
+					}
+					if (des.collider.name == "BlockMonk")
+					{
+						monkCount++;
+					}
+				}
+				touchCount--;
 			}
 		}
 	}
@@ -126,6 +149,7 @@ public class TouchManager : MonoBehaviour
 				Destroy(removableBallList[i]);
 			}
 			StartCoroutine(DropBall(remove_cnt));
+			touchCount--;
 		}
 		firstBall = null;
 		lastBall = null;
@@ -138,7 +162,7 @@ public class TouchManager : MonoBehaviour
 
 	IEnumerator DropBall(int blockCount)
 	{
-		blockCount--;
+
 		if (blockCount == 0)
 		{
 			yield break;
@@ -146,6 +170,7 @@ public class TouchManager : MonoBehaviour
 		value = Random.Range(0, blocks.Length);
 		Instantiate(blocks[value], new Vector3(generateX, generateY, generateZ), Quaternion.Euler(0, 0, Random.Range(plusAngleValue, minusAngleValue)));
 		yield return new WaitForSeconds(0.1f);
+		blockCount--;
 		StartCoroutine(DropBall(blockCount));
 	}
 }
