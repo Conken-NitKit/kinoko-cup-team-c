@@ -13,13 +13,23 @@ public class TouchManager : MonoBehaviour
 
 	private GameObject firstBall;
 	private GameObject lastBall;
+
 	private string currentName;
+	private string ballName;
+
 	private int value;
 	private float plusAngleValue = 60;
 	private float minusAngleValue = -60;
 	private float generateX = 0;
 	private float generateY = 10;
 	private float generateZ = 0;
+	private int blaveCount;
+	private int warriorCount;
+	private int wizardCount;
+	private int monkCount;
+
+
+
 	List<GameObject> removableBallList = new List<GameObject>();
 
     void FixedUpdate()
@@ -44,7 +54,7 @@ public class TouchManager : MonoBehaviour
 		if (hit.collider != null)
 		{
 			GameObject hitObj = hit.collider.gameObject;
-			string ballName = hitObj.name;
+			ballName = hitObj.name;
 			if (ballName.StartsWith("Block"))
 			{
 				firstBall = hitObj;
@@ -52,6 +62,20 @@ public class TouchManager : MonoBehaviour
 				currentName = hitObj.name;
 				removableBallList = new List<GameObject>();
 				PushToList(hitObj);
+			}
+			else if (ballName.StartsWith("Bomb"))
+            {
+				var destroyBall = Physics2D.CircleCastAll(transform.position, 5.0f, Vector3.forward);
+				int i = 0;
+				foreach(var des in destroyBall)
+                {
+                    if (des.collider.name.StartsWith("Block") || des.collider.name.StartsWith("Bomb"))
+                    {
+						i++;
+						Destroy(des.collider.gameObject);
+                    }
+                }
+				StartCoroutine(DropBall(i));
 			}
 		}
 	}
@@ -80,6 +104,22 @@ public class TouchManager : MonoBehaviour
 		int remove_cnt = removableBallList.Count;
 		if (remove_cnt >= 3)
 		{
+			if(ballName == "BlockBlave")
+            {
+				blaveCount = remove_cnt;
+            }
+			if(ballName == "BlockWarrior")
+            {
+				warriorCount = remove_cnt;
+            }
+			if(ballName == "BlockWizard")
+            {
+				wizardCount = remove_cnt;
+            }
+			if(ballName == "BlockMonk")
+            {
+				monkCount = remove_cnt;
+            }
 			for (int i = 0; i < remove_cnt; i++)
 			{
 				Destroy(removableBallList[i]);
