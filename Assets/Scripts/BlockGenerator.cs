@@ -10,8 +10,6 @@ public class BlockGenerator : MonoBehaviour
     [SerializeField]
     private GameObject[] blocks;
 
-    private int count = 0;
-    private const int maxCount = 60;
     private int value;
     private float plusAngleValue = 60;
     private float minusAngleValue = -60;

@@ -5,6 +5,7 @@ using UnityEngine;
 /// <summary>
 /// パズルに関するスクリプト
 /// 左クリックしながら動かしたときにそのブロックを判定して消したりすることができる
+/// 爆弾を押すと、一定範囲内のブロックと爆弾を消すことができる
 /// </summary>
 public class TouchManager : MonoBehaviour
 {
@@ -13,17 +14,35 @@ public class TouchManager : MonoBehaviour
 
 	private GameObject firstBall;
 	private GameObject lastBall;
+
 	private string currentName;
+	private string ballName;
+
 	private int value;
 	private float plusAngleValue = 60;
 	private float minusAngleValue = -60;
 	private float generateX = 0;
 	private float generateY = 10;
 	private float generateZ = 0;
+	private int blaveCount;
+	private int warriorCount;
+	private int wizardCount;
+	private int monkCount;
+	private int touchCount = 3;
+
+	[SerializeField]
+	private float explosionRange = 5.0f;
+
+
+
 	List<GameObject> removableBallList = new List<GameObject>();
 
     void FixedUpdate()
     {
+		if(touchCount == 0)
+        {
+			gameObject.SetActive(false);
+        }
 		if (Input.GetMouseButtonDown(0) && firstBall == null)
 		{
 			OnDragStart();
@@ -44,7 +63,7 @@ public class TouchManager : MonoBehaviour
 		if (hit.collider != null)
 		{
 			GameObject hitObj = hit.collider.gameObject;
-			string ballName = hitObj.name;
+			ballName = hitObj.name;
 			if (ballName.StartsWith("Block"))
 			{
 				firstBall = hitObj;
@@ -52,6 +71,35 @@ public class TouchManager : MonoBehaviour
 				currentName = hitObj.name;
 				removableBallList = new List<GameObject>();
 				PushToList(hitObj);
+			}
+			else if (ballName.StartsWith("Bomb"))
+            {
+				var destroyBall = Physics2D.CircleCastAll(Camera.main.ScreenToWorldPoint(Input.mousePosition), explosionRange, Vector3.forward);
+				foreach(var des in destroyBall)
+                {
+                    if (des.collider.name.StartsWith("Block") || des.collider.name.StartsWith("Bomb"))
+                    {
+						Destroy(des.collider.gameObject);
+						StartCoroutine(DropBall(1));
+                    }
+					if (des.collider.name == "BlockBlave")
+					{
+						blaveCount++;
+					}
+					if (des.collider.name == "BlockWarrior")
+					{
+						warriorCount++;
+					}
+					if (des.collider.name == "BlockWizard")
+					{
+						wizardCount++;
+					}
+					if (des.collider.name == "BlockMonk")
+					{
+						monkCount++;
+					}
+				}
+				touchCount--;
 			}
 		}
 	}
@@ -80,11 +128,28 @@ public class TouchManager : MonoBehaviour
 		int remove_cnt = removableBallList.Count;
 		if (remove_cnt >= 3)
 		{
+			if(ballName == "BlockBlave")
+            {
+				blaveCount = remove_cnt;
+            }
+			if(ballName == "BlockWarrior")
+            {
+				warriorCount = remove_cnt;
+            }
+			if(ballName == "BlockWizard")
+            {
+				wizardCount = remove_cnt;
+            }
+			if(ballName == "BlockMonk")
+            {
+				monkCount = remove_cnt;
+            }
 			for (int i = 0; i < remove_cnt; i++)
 			{
 				Destroy(removableBallList[i]);
 			}
 			StartCoroutine(DropBall(remove_cnt));
+			touchCount--;
 		}
 		firstBall = null;
 		lastBall = null;
@@ -97,7 +162,7 @@ public class TouchManager : MonoBehaviour
 
 	IEnumerator DropBall(int blockCount)
 	{
-		blockCount--;
+
 		if (blockCount == 0)
 		{
 			yield break;
@@ -105,6 +170,7 @@ public class TouchManager : MonoBehaviour
 		value = Random.Range(0, blocks.Length);
 		Instantiate(blocks[value], new Vector3(generateX, generateY, generateZ), Quaternion.Euler(0, 0, Random.Range(plusAngleValue, minusAngleValue)));
 		yield return new WaitForSeconds(0.1f);
+		blockCount--;
 		StartCoroutine(DropBall(blockCount));
 	}
 }
