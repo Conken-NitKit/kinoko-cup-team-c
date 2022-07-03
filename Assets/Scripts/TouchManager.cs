@@ -24,10 +24,10 @@ public class TouchManager : MonoBehaviour
 	private float generateX = 0;
 	private float generateY = 10;
 	private float generateZ = 0;
-	public int blaveCount;
-	public int warriorCount;
-	public int wizardCount;
-	public int healerCount;
+	private int blaveCount;
+	private int warriorCount;
+	private int wizardCount;
+	private int monkCount;
 	private int touchCount = 3;
 
 	[SerializeField]
@@ -94,9 +94,9 @@ public class TouchManager : MonoBehaviour
 					{
 						wizardCount++;
 					}
-					if (des.collider.name == "BlockHealer")
+					if (des.collider.name == "BlockMonk")
 					{
-						healerCount++;
+						monkCount++;
 					}
 				}
 				touchCount--;
@@ -140,9 +140,9 @@ public class TouchManager : MonoBehaviour
             {
 				wizardCount = remove_cnt;
             }
-			if(ballName == "BlockHealer")
+			if(ballName == "BlockMonk")
             {
-				healerCount = remove_cnt;
+				monkCount = remove_cnt;
             }
 			for (int i = 0; i < remove_cnt; i++)
 			{

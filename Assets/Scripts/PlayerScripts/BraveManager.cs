@@ -7,16 +7,14 @@ using UnityEngine;
 /// </summary>
 public class BraveManager : MonoBehaviour
 {
-    [SerializeField] TouchManager touchManager;
-
     void Start()
     {
         
     }
 
-    void FixedUpdate()
+    // Update is called once per frame
+    void Update()
     {
-        //int blaveAttackEnemyDamage = touchManager.blaveCount; 
         
     }
 }

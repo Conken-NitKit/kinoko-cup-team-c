@@ -7,16 +7,13 @@ using UnityEngine;
 /// </summary>
 public class WarriorManager : MonoBehaviour
 {
-    [SerializeField] TouchManager touchManager;
-
     void Start()
     {
         
     }
 
-    void FixedUpdateUpdate()
+    void Update()
     {
-        //int warriorAttackEnemyDamage = touchManager.warriorCount;
-
+        
     }
 }

@@ -17,10 +17,6 @@ public class EnemyController : MonoBehaviour
 
     [SerializeField]
     private GameObject touchManager;
-    [SerializeField]
-    private GameObject enemyControl;
-
-
 
     private int hitPoint;
     private int hitPointPercent;

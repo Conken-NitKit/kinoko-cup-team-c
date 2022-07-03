@@ -7,16 +7,13 @@ using UnityEngine;
 /// </summary>
 public class WizardManager : MonoBehaviour
 {
-    [SerializeField] TouchManager touchManager;
-
     void Start()
     {
         
     }
 
-    void FixedUpdate()
+    void Update()
     {
-        //int wizardAttackEnemyDamage = touchManager.wizardCount;
-
+        
     }
 }
