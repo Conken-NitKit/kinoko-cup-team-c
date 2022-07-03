@@ -37,6 +37,7 @@ public class EnemyController : MonoBehaviour
     IEnumerator EnemyAttack()
     {
         hitPointPercent = hitPoint / maxHitPoint * changePercent;
+        //Debug.Log("hitPointPeroent ");
         if(hitPointPercent >= 75)
         {
             attackDamage += basicDamage * enemyAttackCount;
