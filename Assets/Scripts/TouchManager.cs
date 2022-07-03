@@ -25,10 +25,10 @@ public class TouchManager : MonoBehaviour
 	private float generateY = 10;
 	private float generateZ = 0;
 	private int blaveCount;
-	private int warriorCount;
-	private int wizardCount;
-	private int monkCount;
-	private int touchCount = 3;
+	public int warriorCount;
+	public int wizardCount;
+	public int monkCount;
+	public int touchCount = 3;
 
 	[SerializeField]
 	private float explosionRange = 5.0f;
