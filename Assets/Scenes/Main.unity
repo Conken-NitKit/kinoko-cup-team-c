@@ -217,6 +217,7 @@ GameObject:
   - component: {fileID: 224370005}
   - component: {fileID: 224370006}
   - component: {fileID: 224370007}
+  - component: {fileID: 224370008}
   m_Layer: 0
   m_Name: Healer
   m_TagString: Untagged
@@ -302,6 +303,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bfb19e0fef18da4ab15fc810e867d6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  touchManager: {fileID: 224370008}
+--- !u!114 &224370008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 224370004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72e42480c09233b4684fa7be87fc1370, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blocks: []
+  explosionRange: 5
 --- !u!1 &293856946
 GameObject:
   m_ObjectHideFlags: 0
@@ -918,6 +934,7 @@ GameObject:
   - component: {fileID: 672967946}
   - component: {fileID: 672967947}
   - component: {fileID: 672967948}
+  - component: {fileID: 672967949}
   m_Layer: 0
   m_Name: Wizard
   m_TagString: Untagged
@@ -1003,6 +1020,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 760abaed22aed3c48ad1c946c03d396c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  touchManager: {fileID: 672967949}
+--- !u!114 &672967949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 672967945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72e42480c09233b4684fa7be87fc1370, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blocks: []
+  explosionRange: 5
 --- !u!1 &715205661
 GameObject:
   m_ObjectHideFlags: 0
@@ -1597,6 +1629,7 @@ GameObject:
   - component: {fileID: 1310277818}
   - component: {fileID: 1310277819}
   - component: {fileID: 1310277820}
+  - component: {fileID: 1310277821}
   m_Layer: 0
   m_Name: Brave
   m_TagString: Untagged
@@ -1682,6 +1715,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f8f3d6472aeb384085f8d4d45d7af7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  touchManager: {fileID: 1310277821}
+--- !u!114 &1310277821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1310277817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72e42480c09233b4684fa7be87fc1370, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blocks: []
+  explosionRange: 5
 --- !u!1 &1325434089
 GameObject:
   m_ObjectHideFlags: 0
@@ -1693,6 +1741,7 @@ GameObject:
   - component: {fileID: 1325434090}
   - component: {fileID: 1325434091}
   - component: {fileID: 1325434092}
+  - component: {fileID: 1325434093}
   m_Layer: 0
   m_Name: Warrior
   m_TagString: Untagged
@@ -1778,6 +1827,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26118b76c2ef7ab4d8d167e781e48c54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  touchManager: {fileID: 1325434093}
+--- !u!114 &1325434093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325434089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72e42480c09233b4684fa7be87fc1370, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blocks: []
+  explosionRange: 5
 --- !u!1 &1343253039
 GameObject:
   m_ObjectHideFlags: 0
