@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33319251528301778}
   - component: {fileID: 23788815367085888}
   m_Layer: 0
-  m_Name: gem_07
+  m_Name: BlockWarrior
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
