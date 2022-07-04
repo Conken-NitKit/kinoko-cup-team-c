@@ -12,7 +12,6 @@ public class BraveManager : MonoBehaviour
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
