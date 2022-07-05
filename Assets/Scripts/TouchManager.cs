@@ -33,6 +33,9 @@ public class TouchManager : MonoBehaviour
 	[SerializeField]
 	private float explosionRange = 5.0f;
 
+	[SerializeField]
+	private Camera blockCamera;
+
 
 
 	List<GameObject> removableBallList = new List<GameObject>();
@@ -58,7 +61,7 @@ public class TouchManager : MonoBehaviour
 	}
 	private void OnDragStart()
 	{
-		RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+		RaycastHit2D hit = Physics2D.Raycast(blockCamera.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
 
 		if (hit.collider != null)
 		{
@@ -74,7 +77,7 @@ public class TouchManager : MonoBehaviour
 			}
 			else if (ballName.StartsWith("Bomb"))
             {
-				var destroyBall = Physics2D.CircleCastAll(Camera.main.ScreenToWorldPoint(Input.mousePosition), explosionRange, Vector3.forward);
+				var destroyBall = Physics2D.CircleCastAll(blockCamera.ScreenToWorldPoint(Input.mousePosition), explosionRange, Vector3.forward);
 				foreach(var des in destroyBall)
                 {
                     if (des.collider.name.StartsWith("Block") || des.collider.name.StartsWith("Bomb"))
@@ -106,7 +109,7 @@ public class TouchManager : MonoBehaviour
 
 	private void OnDragging()
 	{
-		RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+		RaycastHit2D hit = Physics2D.Raycast(blockCamera.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
 		if (hit.collider != null)
 		{
 			GameObject hitObj = hit.collider.gameObject;
