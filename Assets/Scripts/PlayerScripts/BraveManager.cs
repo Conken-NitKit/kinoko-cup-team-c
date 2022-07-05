@@ -7,13 +7,17 @@ using UnityEngine;
 /// </summary>
 public class BraveManager : MonoBehaviour
 {
+    [SerializeField] TouchManager touchManager;
+    //TouchManagerにBlockの入力回数が決まっている場合
+    //入力回数分が終わったかどうかのbool型変数を取得
+
     void Start()
     {
         
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        
+        Debug.Log(touchManager.blaveCount);
     }
 }
