@@ -1169,6 +1169,7 @@ GameObject:
   - component: {fileID: 1461923344}
   - component: {fileID: 1461923345}
   - component: {fileID: 1461923346}
+  - component: {fileID: 1461923347}
   m_Layer: 0
   m_Name: Wizard
   m_TagString: Untagged
@@ -1254,6 +1255,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 760abaed22aed3c48ad1c946c03d396c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  toushManager: {fileID: 1461923347}
+--- !u!114 &1461923347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461923343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72e42480c09233b4684fa7be87fc1370, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blocks: []
+  explosionRange: 5
 --- !u!1 &1467365216
 GameObject:
   m_ObjectHideFlags: 0
@@ -1826,6 +1842,7 @@ GameObject:
   - component: {fileID: 1806192210}
   - component: {fileID: 1806192211}
   - component: {fileID: 1806192212}
+  - component: {fileID: 1806192213}
   m_Layer: 0
   m_Name: Healer
   m_TagString: Untagged
@@ -1911,6 +1928,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bfb19e0fef18da4ab15fc810e867d6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  toushManager: {fileID: 1806192213}
+--- !u!114 &1806192213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1806192209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72e42480c09233b4684fa7be87fc1370, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blocks: []
+  explosionRange: 5
 --- !u!1 &1853020063
 GameObject:
   m_ObjectHideFlags: 0
@@ -2072,6 +2104,7 @@ GameObject:
   - component: {fileID: 1996967060}
   - component: {fileID: 1996967061}
   - component: {fileID: 1996967062}
+  - component: {fileID: 1996967063}
   m_Layer: 0
   m_Name: Warrior
   m_TagString: Untagged
@@ -2157,6 +2190,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26118b76c2ef7ab4d8d167e781e48c54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  toushManager: {fileID: 1996967063}
+--- !u!114 &1996967063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1996967059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72e42480c09233b4684fa7be87fc1370, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blocks: []
+  explosionRange: 5
 --- !u!1 &2041317251
 GameObject:
   m_ObjectHideFlags: 0
@@ -2251,6 +2299,7 @@ GameObject:
   - component: {fileID: 2062989603}
   - component: {fileID: 2062989604}
   - component: {fileID: 2062989605}
+  - component: {fileID: 2062989606}
   m_Layer: 0
   m_Name: Brave
   m_TagString: Untagged
@@ -2336,3 +2385,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f8f3d6472aeb384085f8d4d45d7af7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  toushManager: {fileID: 2062989606}
+--- !u!114 &2062989606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062989602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72e42480c09233b4684fa7be87fc1370, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blocks: []
+  explosionRange: 5
