@@ -7,7 +7,7 @@ using UnityEngine;
 /// </summary>
 public class HealerManager : MonoBehaviour
 {
-    [SerializeField] TouchManager toushManager;
+    [SerializeField] TouchManager touchManager;
 
     void Start()
     {
@@ -16,6 +16,6 @@ public class HealerManager : MonoBehaviour
 
     void FixedUpdate()
     {
-        //Debug.Log(TouchManager.healerCount);
+        Debug.Log(touchManager.healerCount);
     }
 }

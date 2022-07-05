@@ -7,7 +7,7 @@ using UnityEngine;
 /// </summary>
 public class WarriorManager : MonoBehaviour
 {
-    [SerializeField] TouchManager toushManager;
+    [SerializeField] TouchManager touchManager;
 
     void Start()
     {
@@ -16,6 +16,6 @@ public class WarriorManager : MonoBehaviour
 
     void FixedUpdate()
     {
-        //Debug.Log(TouchManager.warriorCount);
+        Debug.Log(touchManager.warriorCount);
     }
 }

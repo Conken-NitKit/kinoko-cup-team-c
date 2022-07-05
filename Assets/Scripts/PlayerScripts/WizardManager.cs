@@ -7,7 +7,7 @@ using UnityEngine;
 /// </summary>
 public class WizardManager : MonoBehaviour
 {
-    [SerializeField] TouchManager toushManager;
+    [SerializeField] TouchManager touchManager;
 
     void Start()
     {
@@ -16,6 +16,6 @@ public class WizardManager : MonoBehaviour
 
     void FixedUpdate()
     {
-        //Debug.Log(TouchManager.wizardCount);
+        Debug.Log(touchManager.wizardCount);
     }
 }
