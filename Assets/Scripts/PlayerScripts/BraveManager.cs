@@ -13,11 +13,11 @@ public class BraveManager : MonoBehaviour
 
     void Start()
     {
-        
+        Debug.Log("勇者Count：" + touchManager.blaveCount);
     }
 
     void FixedUpdate()
     {
-        Debug.Log(touchManager.blaveCount);
+        
     }
 }

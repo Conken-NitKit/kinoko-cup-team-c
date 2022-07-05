@@ -16,6 +16,6 @@ public class WizardManager : MonoBehaviour
 
     void FixedUpdate()
     {
-        Debug.Log(touchManager.wizardCount);
+        //Debug.Log(touchManager.wizardCount);
     }
 }
