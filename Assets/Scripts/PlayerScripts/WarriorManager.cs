@@ -16,6 +16,6 @@ public class WarriorManager : MonoBehaviour
 
     void FixedUpdate()
     {
-        Debug.Log(touchManager.warriorCount);
+        //Debug.Log(touchManager.warriorCount);
     }
 }

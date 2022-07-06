@@ -16,6 +16,6 @@ public class HealerManager : MonoBehaviour
 
     void FixedUpdate()
     {
-        Debug.Log(touchManager.healerCount);
+        //Debug.Log(touchManager.healerCount);
     }
 }
