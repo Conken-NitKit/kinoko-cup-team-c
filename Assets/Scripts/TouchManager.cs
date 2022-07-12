@@ -34,9 +34,20 @@ public class TouchManager : MonoBehaviour
 	[SerializeField]
 	private float explosionRange = 5.0f;
 
+	[SerializeField]
+	GameObject blockCamera;
+
+	//blockCameraを取得するための格納変数
+	//Camera cam; 
+
+    void Start()
+    {
+		//cam = GameObject.Find("Block Camera").GetComponent<Camera>();
+    }
 
 
-	List<GameObject> removableBallList = new List<GameObject>();
+
+    List<GameObject> removableBallList = new List<GameObject>();
 
     void FixedUpdate()
     {
@@ -59,6 +70,8 @@ public class TouchManager : MonoBehaviour
 	}
 	private void OnDragStart()
 	{
+		/*Camera.main.ScreenToWorldPoint(Input.mousePosition)*/
+		/*cam.ScreenToWorldPoint(Input.mousePosition)*/
 		RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
 
 		if (hit.collider != null)
